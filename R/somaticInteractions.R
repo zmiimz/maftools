@@ -208,7 +208,7 @@ somaticInteractions = function(maf, top = 25, genes = NULL, pvalue = c(0.05, 0.0
       w = arrayInd(which(10^-abs(interactions) < min(pvalue)), rep(m,2))
       points(w, pch=pvSymbols[2], col="black", cex = sigSymbolsSize)
       #w = arrayInd(which(10^-abs(interactions) < max(pvalue)), rep(m,2))
-      w = arrayInd(which((10^-abs(interactions) < max(pvalue)) & (10^-abs(interactions) > min(pvalue))), rep(m,2))
+      w = arrayInd(which((10^-abs(interactions) < max(pvalue)) & (10^-abs(interactions) >= min(pvalue))), rep(m,2))
       points(w, pch=pvSymbols[1], col="black", cex = sigSymbolsSize)
     }
 
